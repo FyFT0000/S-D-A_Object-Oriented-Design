@@ -1,0 +1,68 @@
+https://www.coursera.org/learn/object-oriented-design?specialization=software-design-architecture
+
+Objet Oriented Design
+    Object-Oriented Design Principles
+
+
+1.3.1   Coupling and Cohesion:
+Guidelines for evaluating the structure of software solutions help ensure that software is flexible, reusable, and maintainable.
+It is important to keep modules simple when you are programming. If your design complexity exceeds what developers can mentally handle, then bugs will occur more often. To help control this, there must be a way of evaluating your design complexity. Design complexity applies to both classes and the methods within
+them.
+A good design allows any modules to connect together without much trouble. The metrics often used to evaluate design complexity are coupling and cohesion.
+_   Coupling: focuses on complexity between a module and other modules. Coupling can be balanced between two extremes: tight coupling and loose coupling. If a module is too reliant on other modules, then it is “tightly coupled” to others. This is a bad design. However, if a module finds it easy to connect to other modules through well-defined interfaces, it is “loosely coupled” to others. This is good design. In order to evaluate the coupling of a module, the metrics to consider are:
+    _Degree: is the number of connections between the module and others. The degree should be small for coupling.
+    _Ease: is how obvious are the connections between the module and others. Connections should be easy to make without needing to understand the implementations of other modules, for coupling purposes.
+    _Flexibility indicates how interchangeable the other modules are for this module. Other modules should be easily replaceable for something better in the future, for coupling purposes.
+_   Cohesion: focuses on complexity within a module, and represents the clarity of the responsibilities of a module. Like complexity, cohesion can work between two extremes: high cohesion and low cohesion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.2.1   Creating Models in Design:
+One approach to help make the design process easier is the object-
+oriented approach. This allows for the description of concepts in the problem and solution spaces as objects—objects are a notion that can be understood by both users and developers, because object-oriented thinking applies to many fields. This shared knowledge makes it possible for users and developers to discuss elements of complex problems.
+_   The goal during software design is to construct and refine “models” of all the objects of the software. Categories of objects involve:
+    _Entity objects, where initial focus during the design is placed in the problem space.
+    _Control objects that receive events and co-ordinate actions as the process moves to the solution space.
+    _Boundary objects that connect outside services to your system, as the process moves towards the solution space.
+_   Software models are often expressed in a visual notation, called Unified Modelling Language (UML).
+_   There's a continual need to critique and evaluate the models to
+ensure the design addresses the original problem and satisfies quality goals. Qualities are expected to be reusable, flexible and maintainable.
+_   The models also serve as design documentation for your software and can be easily mapped to skeletal source code.
+
+1.2.2   The goal of object-oriented design is:
+    _Make an abstract data type easier to write
+    _Structure a system around abstract data types called classes
+    _Introduce the ability for an abstract data type to extend another by introducing a concept called inheritance.

@@ -1,0 +1,142 @@
+https://www.coursera.org/learn/object-oriented-design?specialization=software-design-architecture
+
+Objet Oriented Design
+    Object-Oriented Modeling
+
+
+1.2.1   Creating Models in Design:
+One approach to help make the design process easier is the object-
+oriented approach. This allows for the description of concepts in the problem and solution spaces as objects—objects are a notion that can be understood by both users and developers, because object-oriented thinking applies to many fields. This shared knowledge makes it possible for users and developers to discuss elements of complex problems.
+_   The goal during software design is to construct and refine “models” of all the objects of the software. Categories of objects involve:
+    _Entity objects, where initial focus during the design is placed in the problem space.
+    _Control objects that receive events and co-ordinate actions as the process moves to the solution space.
+    _Boundary objects that connect outside services to your system, as the process moves towards the solution space.
+_   Software models are often expressed in a visual notation, called Unified Modelling Language (UML).
+_   There's a continual need to critique and evaluate the models to
+ensure the design addresses the original problem and satisfies quality goals. Qualities are expected to be reusable, flexible and maintainable.
+_   The models also serve as design documentation for your software and can be easily mapped to skeletal source code.
+
+1.2.2   The goal of object-oriented design is:
+    _Make an abstract data type easier to write
+    _Structure a system around abstract data types called classes
+    _Introduce the ability for an abstract data type to extend another by introducing a concept called inheritance.
+_   With an object-oriented programming paradigm is now able to build a software system that is made up of entirely abstract data types. The advantage of this is that the system will mimic the structure of the problem, meaning that any object-oriented program is capable of representing real world objects or ideas with more fidelity. 
+
+1.2.3-6 Four Design Principles:
+_Abstraction: It is the idea of simplifying a concept
+in the problem domain. Abstraction breaks a concept down into a simplified description that ignores unimportant details and emphasizes the essentials needed for the concept, within some context.
+    _An abstraction should follow the rule of least astonishment. This rule suggests that essential attributes and behaviours should be captured with no surprises and no definitions that fall beyond its scope. This prevents irrelevant characteristics from becoming part of an abstraction and helps to ensure that the abstraction makes sense for the concept’s purpose.
+    _Program constructs includes elements such as functions, classes, enumerations, and methods. In object-oriented modelling, abstraction pertains most directly to the notion of a class.
+    _Context or a specific perspective is critical when forming an abstraction. This is because context might change the essential characteristics of a concept.
+    _The essential characteristics of an abstraction can be understood in two ways:
+        _Basic Attributes: are characteristics that do not disappear over time. Although their values may change, the attributes themselves do not. 
+        _Basic Behaviours: These are the responsibilities that the abstraction does for its purpose.
+    _As abstractions rely strongly on context or perspective, it is important to carefully consider what is relevant. Likewise, if the purpose of the system being built, or if the problem being solved changes, it is important to re-examine your abstractions and change them accordingly.
+_Encapsulation: involves a concept that allows
+something to be contained in a capsule, some of which you can access from the outside and some of which you cannot.
+    _There are three ideas behind encapsulation:
+        _1The ability to “bundle” attribute values (or data) and behaviours (or functions) that manipulate those values, into a self-contained object.
+        _2The ability to “expose” certain data and functions of that object, which can be accessed from other objects, usually through an interface.
+        _3The ability to “restrict” access to certain data and functions to only within the object.
+    _An object’s data should only contain what is relevant for that object. A class therefore only knows what attributes or data is relevant to it.
+    _A class also defines behaviours through methods. Methods manipulate the attribute values or data in the object to achieve the actual behaviours. Certain “methods” can be exposed or made accessible to objects of other classes. This provides an interface to other objects to use the class.
+    _Integrity and Security: As one of the ideas of encapsulation is restricting access to certain data and functions to only within an object, this  aturally links encapsulation to data integrity and the security of sensitive information. If certain attributes and methods are restricted from outside access, except through specific methods, then the data cannot be changed through variable assignments. This prevents assumptions or dependencies from breaking for the data within an object.
+    _Changeable Implementation: Encapsulation is also a useful principle for implementing software changes. As the ability to “expose” data is separate from the “bundle” of attributes itself, this means that the implementation of attributes and methods can change, but the accessible interface of a class can remain the same. Users accessing or querying the class do not need to worry about how the implementation works behind the interface—they will still use the same means to access information.
+    _Black box: The computation steps taken within a class never need to be known by any other class, as long as they are able to access the interface. A class is therefore like a black box that you cannot see into for details about how attributes are represented or how methods compute their results. 
+_Decomposition: It consists of taking a whole thing, and
+dividing it into different parts. Alternately, decomposition can also indicate taking separate parts with different functionalities and combining them to create a whole. Decomposition allows problems to broken into smaller pieces that are easier to understand and
+solve.
+    _The general rule for decomposition is to look at the different responsibilities of a whole and evaluate how the whole can be separated into parts that each have a specific responsibility. Each of these parts are in fact separate objects that can be created from separate classes in your design. In this way, decomposition is similar to abstraction where you are dividing a whole into objects with essential characteristics. Each different kind of part within a whole can prescribe a class, so we can keep our parts better organized and encapsulated on their own. The class for the whole object then relates to the classes for the constituent part objects.
+    _A whole might have a fixed or dynamic number of a certain type of part. If there is a fixed number, then over the lifetime of the whole object, it will have exactly that much of the part object.
+    _Dynamic number. This means the whole object may gain new instances of those part objects over its lifetime.
+    _Another issue worth noting in decomposition is that whole objects and part objects have lifetimes. Sometimes, these lifetimes are closely related, and the part shares the same lifetime as the whole—one cannot exist without the other. Butsometimes, the part and the whole can exist independently and have different lifetimes.
+    _Whole things may also contain parts that are shared with another whole at the same time. However, sometimes sharing a part is not possible or intended.
+_Generalization: helps reduce redundancy when solving problems. It is a common principle used in many disciplines outside of software development.
+    _In object-oriented modelling, generalization is a main design principle, but beyond creating a method that can be applied to different data, object-oriented modelling achieves generalization by classes through inheritance.
+    _In standard terminology, a parent class is known as a superclass and a child class is called a subclass.Inheritance allows a superclass to form a generalization and for its subclasses to be more specialized. Without parent classes, systems are not flexible, maintainable, or reusable.
+    _Naming superclasses and subclasses: it is good practice to name them after things you are trying to model. This makes code easier to understand.
+
+_Design Structure in Java and UML Class Diagrams: One technique used for technical design is that of UML class diagram, also known as simply a class diagram. These class diagrams provide more detail than CRC cards and allow for easier conversion to classes for coding and implementation.
+_The design principle can be applied at the design level using UML class diagrams. The design is eventually turned into code.
+
+1.2.7   Abstraction:
+    _The class name: is the same as the class name in your Java class.
+    _The properties section: is equivalent to Java’s member variables. This section defines the attributes of the abstraction by using a standard template for variable name and variable type. Variable types can be classes or primitive types. <variable name>:<variable type>
+    _The operations section: is equivalent to Java’s methods. This section defines the behaviours of the abstraction, using a standard template for the operation name, parameter list, and return type. <name>( <parameter list> ) : <return type>
+
+1.2.8   Encapsulation: The design principle of encapsulation involves three ideas:
+    _Data and functions that manipulate that data are “bundled” into a self-contained object.
+    _Data and functions of the object can be exposed or made accessible from other objects.
+    _Data and functions of the object can be restricted to only within the object.
+    _Access and restriction (two aspects of visibility) can be represented as well, through the use of symbols – and +. 
+    _There are two different kinds of methods typically used to preserve data integrity. These are:
+        _Getter methods, which are used to retrieve data. Getters often retrieve private data.
+        _Setter methods, which are used to change data. Setters often set a private attribute in a safe way.
+
+1.2.9   Decomposition: Takes a whole thing and divides it into different parts. It also does the reverse, and takes separate parts with different functionalities, and combines them to form a whole. There are three types of relationships in decomposition, which define the interaction between the whole and the parts:
+    _Association: indicates a loose relationship between two objects, which may interact with each other for some time. They are not dependent on each other—if one object is destroyed, the other can continue to exist, and there can be any number of each item in the relationship. One object does not belong to another, and they may have numbers that are not tied to each other.
+        _The “zero dot dot star” (0…*) shows that a object is associated with zero or more other objects
+    _Aggregation: is a “has-a” relationship where a whole has parts that belong to it. Parts may be shared among wholes in this relationship. Aggregation relationships are typically weak, however. This means that although parts can belong to wholes, they can also exist independently.
+        _Aggregation can be represented in UML class diagrams with the symbol of an empty diamond.
+    _Composition: is one of the most dependent of the decomposition relationships. This relationship is an exclusive containment of parts, otherwise known as a strong “has-a” relationship. In other words, a whole cannot exist without its parts, and if the whole is destroyed, then the parts are destroyed too. In this relationship, you can typically only access the parts through its whole. Contained parts are exclusive to the whole.
+        _Composition can be represented with a filled-in diamond using UML class diagrams.
+
+_Dependency relationships:In UML, a dependency relationship is a relationship in which one element, the client, uses or depends on another element, the supplier. You can use dependency relationships in class diagrams, component diagrams, deployment diagrams, and use-case diagrams to indicate that a change to the supplier might require a change to the client.
+    _You can also use a dependency relationship to represent precedence, where one model element must precede another.
+    _Dependency is displayed in the diagram editor as a dashed line with an open arrow that points from the client to the supplier.
+
+1.2.10  Generalization:The design principle of generalization takes repeated, common, or shared characteristics between two or more classes and factors them out into another class, so that code can be reused, and the characteristics can be inherited by subclasses.
+    _Generalization and inheritance can be represented UML class diagrams using a solid-lined arrow.
+    _The superclass is at the head of the arrow, while the subclass is at the tail. It is conventional to have the arrow pointing upwards. The class diagram is structured so that superclasses are always on top and subclasses are towards the bottom.
+    _The # symbolizes that the attributes are protected. Protected attributes in Java can only be accessed by: The encapsulated class itself, All subclasses, All classes within the same package.
+    _In JAva the keyword abstract in the class indicates that the class cannot be instantiated.
+    _Inheritance is declared in Java using the keyword extends. Objects are instantiated from a class by using constructors. With inheritance, if you want an instance of a subclass, you must give the superclass a chance to prepare the attributes for the object appropriately. Classes can have implicit constructors or explicit constructors.
+    _A subclass’ constructor must class its superclass’ constructor if the superclass has an explicit constructor. Explicit constructors of the superclass must be referenced by the subclass; otherwise, the superclass attributes would not be appropriately initialized. To access the superclass’ attributes, methods, and constructors, the subclass uses the keyword super.
+    _Subclasses can override the methods of its superclass, meaning that a subclass can provide its own implementation for an inherited superclass’ method.
+_Implementation inheritance. In Java, only single implementation inheritance is allowed. This means that while a superclass can have multiple subclasses, a subclass can only inherit from a single superclass.
+    _Subclasses can also be a superclass to another class. Inheritance can trickle down through as many classes as desired.
+    _Inheritance allows the generalization of related classes into a single superclass, and it still allows the subclasses to retain the same set of attributes and behaviours. This removes redundancy in the code and makes it easier to implement changes.
+    _A class denotes a type for its objects. The type signifies what these objects can do through public methods. For example, instances of a dog class are dog typed objects, and these objects do dog things. In modeling a problem, we may want to express subtyping relationships between two types. For example, we can have dog type as a subtype of animal type. This means a dog object is not only dog typed, it is also animal typed. So a dog object behaves not only like a dog, it should also behave like an animal. In JAVA, class inheritance with the extends keyword is often used for subtyping.
+
+1.2.11  Interface Inheritance: Other languages like C++ support multiple inheritance. This is when a subclass can have two or more superclasses. Java addresses the restriction of single implementation inheritance by offering interface inheritance, another form of generalization.
+_Interfaces fulfill a specific need: to provide for a way for related classes to work with consistency.
+    _A Java interface also denotes a type as a class denotes a type for its objects, but an interface only declares method signatures, with no constructors, attributes, or method bodies. It specifies the expected behaviours in the method signatures, but it does not provide any implementation details. The interface also does not encapsulate any attributes of the superclass—this is because attributes are not behaviours.
+    _A Java interface may also be used for subtyping. If a class implements an interface, then the class not  only behaves like itself, it is also expected to behave according to the method signatures listed in the interface. The class needs to provide the method body details for what it means to implement the interface. An interface is like a contract to be fulfilled by implementing classes.
+    _In implementation inheritance, there is consistency between the superclass type and the subclass type. A subclass object is usable anywhere in your program where you are dealing with the superclass type. Similarly, in interface inheritance, there is consistency between the interface type and the implementing class type.
+    _In Java, the keyword interface is used to indicate that one is being defined. The letter “l” is sometimes placed before an actual name to indicate an interface.
+    _In order to use an interface, you must declare that you are going to fulfill the contract as described in the interface. The keyword in Java for this action is implements. If a class has declared that it will implement or describe the behaviours that are in the interface, you must have all the method signatures explicitly declared and implemented in the class.
+    _ A Java interface can describe the expected common behaviour of multiple classes, without directly implementing that behavior. An interface can be implemented by multiple classes, with each implementing class defining their own, appropriate version of the behaviour. Also, a class may implement multiple different interfaces.
+    _Interfaces can be drawn in a similar way to classes in UML diagrams. Interfaces are explicitly noted using guillemets, or French quotes, to surround the word «interface».
+    _The interaction between an interface and a class that is implementing the interface is indicated using a dotted arrow. The implementing class touches the tail end of the arrow and the interface touches the head of the arrow. The conventional way to draw interfaces on your UML class diagrams is to have the arrow pointing upward, so the interface is always on the top, and the classes that implement them are towards the bottom.
+    _There are several advantages to interfaces. Understanding what these are will help you determine if you should use interfaces or inheritance when designing a system.
+        _Like abstract classes, which are classes that cannot be instantiated, interfaces are a means in which you can achieve polymorphism. In object-oriented languages, polymorphism is when two classes have the same description of a behaviour, but the implementations of that behaviour may be different.
+        _Interfaces can inherit from other interfaces, but interfaces should not be extended if you are simply trying to create a larger interface. Interface A should only inherit from interface B if the behaviours in interface A can fully be used as a substitution for interface B.
+        _Another advantage of interfaces relates back to multiple implementation inheritance. This is because inheriting from two or more superclasses can cause data ambiguity—if a subclass inherits from two or more superclasses that have attributes with the same name or behaviours with the same method signature, then it is not possible to distinguish between them. As Java cannot tell which one is referenced, so it does not allow for multiple inheritance to prevent data ambiguity.
+        _Interfaces, however, do not have this issue. In Java, a class can implement as many interfaces as desired. This is because interfaces are only contracts and they do not enforce a specific way to complete these contracts, so overlapping method signatures are not a problem. A single implementation for multiple interfaces with overlapping contracts is acceptable. There is no ambiguity, as a class may only have one definition of a specific method, and it is the same implementation no matter which interface. Java avoids data ambiguity in this way.
+    _Classes can implement one or more interfaces at a time, allowing for multiple types. Interfaces enable you to describe behaviours without the need to implement them, which allows reuse of those abstractions. Interfaces allow the creation of programs with reusable and flexible code. It is important to remember, however, that you should not generalize all behavioural contracts into interfaces.
+
+    _Style guidelines for UML class diagram:
+        _try to illuminate crossing edges.
+        _boxes should not overlap other boxes or edges.
+        _diagram should flow from top to bottom and left to right.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

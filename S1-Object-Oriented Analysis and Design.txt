@@ -1,0 +1,77 @@
+https://www.coursera.org/learn/object-oriented-design?specialization=software-design-architecture
+
+Objet Oriented Design
+    Object-Oriented Analysis and Design
+
+
+1.1.1   SDA = software design & architecture
+_   Good design isn't just about code. It is about being able to express ideas for your software with other developers, other teams, and your clients.
+_   Having a well-thought design makes your software easier to implement, reduces a need for major changes later or the project and it saves you from headaches down the line.
+_   Software Design Architecture will help your software
+become flexible, reusable, and maintainable.
+
+1.1.2   Software architect and Design Roles
+_   Typically, the software designer role would be
+responsible for outlining a software solution to a specific problem by designing the details of individual components and their responsibilities.
+_   A software architect role would be responsible for looking at the entire system and choosing appropriate frameworks, data storage, solutions and determining how components interact with each other.
+_   In short, software design looks at the lower level aspects of a system, whereas software architecture tends to look at the bigger picture, the higher level aspects of a system.
+_   Apply simplicity first as a main principle, if I'm looking at how I'm approaching the problem. That's the filter that I try to use on it.  It's only when you stripped away all the unnecessary complexity that you realize you've got the core of a great solution to a problem.
+
+1.1.3   Object-Oriented Modeling
+_   Object-oriented modeling involves the practice of
+representing key concepts through objects in your software.
+
+1.1.4   Software Requirements, Conceptual and Technical Designs
+_   You can think of developing software as a process that takes a problem and produces a solution involving software. 
+_   By using objects to represent things in your code, the code stays organized, flexible, and reusable.
+    _Objects keep code organized by putting related details and specific functions in distinct, easy-to-find places.
+    _Objects keep code flexible, so details can be easily changed in a modular way within the object, without affecting the rest of the code.
+    _Objects allow code to be reused, as they reduce the amount of code that needs to be created, and keeps programs simple.
+_   Steps of requirements and design activities in the software process:
+    _Requirements are conditions or capabilities that must be implemented in a product, based on client or user request. They are the starting point of a project—you must understand what your client wants.
+    _Conceptual Design:  are created with an initial set of requirements as a basis. Recognizes appropriate components, connections, and responsibilities of the software product. The major components and connections as well as their associated responsibilities of the software being developed are outlined. Conceptual designs are expressed or communicated through conceptual mock-ups. These are visual notations that provide initial thoughts for how requirements will be satisfied. Mock-ups for software involving user interfaces are often presented as wireframes, which are a kind of blueprint or basic visual representation of the product. Every component also has a task it needs to perform. This is known as its responsibility.
+    _Technical designs build on conceptual designs and requirements to define the technical details of the solution. Brings this information to the next stage—it aims to describe how these responsibilities are met. In order to communicate technical design, technical diagrams are used to visualize how to address specific issues for each component, as conceptual mock-ups are generally not specific enough to capture this information.
+    _Compromise in Requirements and Design: When in the design phase, there may need to be compromises in creating an acceptable solution. Constant communication and feedback is key to creating the right solution that meets client needs and works within any restrictions that may exist.
+_   Expressing Requirements with User Stories: Once a requirement is elicited, it needs to be expressed in some form. One technique for expressing a requirement is called a user story. A user story is simply a requirement, often from the perspective of an end-user, which is stated in natural language. A user story looks like this: As a ______, I want to ______ so that ______. Put the user role into the first blank. In the second blank, put the goal that the user role wants to achieve. After so that, put the reason why the user role wants this goal. After you fill in a user story, you can apply object-oriented thinking to it to discover objects and possibly further requirements. Usually, the nouns correspond to objects in your software. Verbs can help you identify the requirements that your objects might have, and may also help you identify connections between objects.
+_   Categories of Objects in Design: As you are breaking down objects, you may find that you will identify different kinds of objects, in generally three categories of objects. When you are identifying objects to include in your software, you will initially get entity objects. The other categories of objects will come later, as you start to think about the technical design of the software.
+    _Entity objects: are the most familiar, because they correspond to some real-world entity in the problem space. Generally, these objects will know attributes about themselves. They will also be able to modify themselves, and have some rules for how to do so.
+    _Boundary objects: are objects which sit at the boundary between systems. This could be an object that deals with another software system. It could also be an object with the responsibility of showing information to the user and getting their input. Any object that deals with another system - a user, another software system, the Internet - can be considered a boundary object.
+    _Control objects: are objects which are responsible for coordination. You will discover control objects when you attempt to break down a large object, and find that it would be useful to have an object that controls the other objects. In Design Patterns a great example is a Mediator: it simply coordinates the activities of many different objects so that they can stay loosely coupled.
+
+1.1.5   Design for Quality_    Attributes: potential trade-offs, and project realities need to be taken into account.
+    _Trade-offs: Decisions may also involve trade-offs in different quality attributes, such as performance, convenience, and security, and these attributes need to be balanced.
+    _Context and Consequences: Context provides important information when deciding on the balance of qualities in design.Software design also must consider the consequences.A good practice is to seek other perspectives on technical designs for a more well-rounded implementation. During the design process, you might consider prototyping alternative ideas and running tests to see what works best. Tests can help catch unintended consequences. 
+    _Satisfying Qualities: Qualities are achieved through satisfying functional and non-functional requirements, which in turn are the basis for the design process.
+    _Functional requirements describe what the system or application is expected to do. A key quality to achieve by satisfying a functional requirement is that of correctness.
+    _Non-functional requirements specify how well the system or application does what it does. Non-functional requirements to satisfy might include performance, resource usage, and efficiency; these requirements can be measured from the running software.
+    _Compromise: In addition to balancing qualities and meeting functional requirements when designing software, it is important to consider multiple perspectives. Software must satisfy qualities that matter to users as well as developers. In other words, how the software structure is organized may affect the quality of performance, as understood by users, and the qualities of reusability and maintainability, as understood by developers.
+    _Common trade-offs in qualities for software design:
+        _Performance and maintainability – High performance code may be less clear and less modular, making it harder to maintain. Alternately, extra code for backward compatibility may affect both performance and maintainability.
+        _Performance and security – Extra overhead for high security may lessen performance.
+        _A good question to ask to help you determine what compromises can be made is: Is there a way to cut back on a certain quality to balance another?
+    _Some common qualities to take into account in software design include: performance, maintainability, security, and backwards compatibility.
+
+1.1.6   CRC: Class, Responsibility, Collaborator (CRC) cards. To identify components, connections and responsibilities from some requirements when forming the conceptual design. CRC cards are used to record,
+organize and refine the components in your design.
+    _CRC cards are designed with three sections: the class name at the top of the card, the responsibilities of the class on the left side of the card, and the collaborators on the right side of the card.
+    _Collaborators are other classes that the class interacts with to fulfill its responsibilities. In the collaborators section, you list other components that your current component connects to or interacts with to fulfill its responsibilities.
+    _CRC cards has a purpose—it forces designers to keep breaking components down into smaller components and classes that can be individually described on a card. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
