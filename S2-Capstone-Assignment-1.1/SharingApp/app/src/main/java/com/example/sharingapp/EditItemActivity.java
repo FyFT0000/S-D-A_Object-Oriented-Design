@@ -105,6 +105,8 @@ public class EditItemActivity extends AppCompatActivity {
             Bundle extras = intent.getExtras();
             image = (Bitmap) extras.get("data");
             photo.setImageBitmap(image);
+        } else {
+            super.onActivityResult(request_code, result_code, intent);
         }
     }
 
