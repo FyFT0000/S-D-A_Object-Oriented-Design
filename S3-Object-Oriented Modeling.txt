@@ -76,6 +76,33 @@ _Sequence diagrams are typically framed within a large box. Titles for the diagr
 _A sequence diagram can contain other sequence diagrams within them. As you design software, your sequence diagrams may get much more complicated. Loops and alternative processes can also be demonstrated in a sequence diagram. An alternative process is a sequence of actions that will occur if a condition is true. An alternative sequence can be placed in a box and labelled “alt” for alternative in the top right corner.
 
 1.3.7   UML State Diagrams
+They are a technique used to describe how systems behave and respond. They follow the states of a system or a single object and show changes between the states as a series of events occur in the system.
+_   A state diagram illustrates object behaviour by depicting the changing states of an object. These change in response to different events. A state is the way an object exists at a particular point in time. The state of an object is determined by the values of its attributes.
+_   Let us examine the different elements of state diagrams:
+    _A filled circle indicates the starting state of the object. Every state diagram begins with a filled circle.
+    _Rounded rectangles indicate other states. These rectangles have three sections: a state name, state variables, and activities.
+        _State names should be short, meaningful titles for the state of the object. Each state should have at least a state name.
+        _State variables are data relevant to the state of the object.
+        _Activities are actions that are performed when in a certain state. There are three types of activities present for each state:
+            _Entry activities are actions that occur when the state is just entered from another state.
+            _Exit activities are actions that occur when the state is exited and moves on to another state.
+            _Do activities are actions that occur while the object is in a certain state.
+    _Arrows indicate transitions from one state to another. Transitions are typically triggered by an event. This event is generally described above the arrow. Each transition arrow will always have an event, and it may even have a guard condition and an action. The transition and action happens from a given state if the event occurs and the condition is true.
+    _A circle with a filled circle inside indicates termination. Termination represents an object being destroyed or the process being completed. Not all diagrams have a termination—some may run continuously.
+    _State diagrams can be useful to help determine the events that might occur during an object’s lifetime, such as different user inputs, and how that object should behave when these events occur, like checking conditions and performing actions. Sometimes it may be easier to see changes in state in a diagram, rather than reading through source code.
+    _State diagrams can also help identify issues in a software system, such as discovering a condition that was unplanned for. They can also help create tests—knowing the different states of a system can help ensure that tests are complete and correct.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
