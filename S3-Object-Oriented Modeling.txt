@@ -8,12 +8,74 @@ Objet Oriented Design
 Guidelines for evaluating the structure of software solutions help ensure that software is flexible, reusable, and maintainable.
 It is important to keep modules simple when you are programming. If your design complexity exceeds what developers can mentally handle, then bugs will occur more often. To help control this, there must be a way of evaluating your design complexity. Design complexity applies to both classes and the methods within
 them.
+Use the term module to refer to program units containing classes and the methods within them.
 A good design allows any modules to connect together without much trouble. The metrics often used to evaluate design complexity are coupling and cohesion.
 _   Coupling: focuses on complexity between a module and other modules. Coupling can be balanced between two extremes: tight coupling and loose coupling. If a module is too reliant on other modules, then it is “tightly coupled” to others. This is a bad design. However, if a module finds it easy to connect to other modules through well-defined interfaces, it is “loosely coupled” to others. This is good design. In order to evaluate the coupling of a module, the metrics to consider are:
     _Degree: is the number of connections between the module and others. The degree should be small for coupling.
     _Ease: is how obvious are the connections between the module and others. Connections should be easy to make without needing to understand the implementations of other modules, for coupling purposes.
-    _Flexibility indicates how interchangeable the other modules are for this module. Other modules should be easily replaceable for something better in the future, for coupling purposes.
-_   Cohesion: focuses on complexity within a module, and represents the clarity of the responsibilities of a module. Like complexity, cohesion can work between two extremes: high cohesion and low cohesion.
+    _Flexibility: indicates how interchangeable the other modules are for this module. Other modules should be easily replaceable for something better in the future, for coupling purposes.
+_   Cohesion: focuses on complexity within a module, and represents the clarity of the responsibilities of a module. Like complexity, cohesion can work between two extremes: high cohesion and low cohesion. A module that performs one task and nothing else, or that has a clear purpose, has high cohesion. A good design has high cohesion. On the other hand, if a module encapsulates more than one purpose, if an encapsulation has to be broken to understand a method, or if the module has an unclear purpose, it has low cohesion. A bad design has low cohesion. If a module has more than one responsibility, it is a good idea to split the module.
+
+It is important to balance between low coupling and high cohesion in system design. Both are necessary for a good design. However, in complex systems, complexity can be distributed between the modules or within the modules. For example, as modules are simplified to achieve high cohesion, they may need to depend more on other modules, thus increasing coupling. On the other hand, as connections between modules are simplified to achieve low coupling, the modules may need to take on more responsibilities, thus lowering cohesion.
+
+1.3.2   Separatio of Concerns
+To understand why decomposition is necessary in design, the principle of separation of concerns must be examined. A concern is a very general notion: it is anything that matters in providing a solution to a problem. Separation of concerns is about keeping the different concerns in your design separate. When software is designed, different concerns should be addressed in different portions of the software.
+_   In order not to become lost in the resulting concerns and subproblems, the design must be organized so all concerns are carefully considered and addressed. To do this, different subproblems and concerns are separated into different sections during design and construction of the software system. This applies the principle of separation of concerns.
+_   Some of these concerns may involve:
+    _What information the implementation represents.
+    _What it manipulates.
+    _What gets presented at the end. 
+_   Separation of concerns provides many advantages. They allow you to develop and update sections of the software independently. Using separation of concerns also means that you do not need to know how all sections of code work in order to update a section. Finally, separation of concerns allows changes to be made to one component without requiring a change in another.
+_   Separation of concerns is a key idea that underlies object-oriented modelling and programming. When addressing
+concerns separately, more cohesive classes are created and the design principles of abstraction, encapsulation, decomposition, and generalization are enforced:
+    _Abstraction occurs as each concept in the problem space is separated with its own relevant attributes and behaviours.
+    _Encapsulation occurs as the attributes and behaviours are gathered together into their own section of code called a class. Access to the class from the rest of the system and its implementation are separated, so details of implementation can change while the view through an interface can stay the same.
+    _Decomposition occurs as a whole class can be separated into multiple classes.
+    _Generalization occurs as commonalities are recognized, and subsequently separated and generalized into a superclass.
+
+1.3.3   Information Hiding
+In software design, information hiding is also specifically used to hide changeable details, such as algorithms or data representations. Assumptions, on the other hand, are not hidden and are typically expressed in APIs and interfaces.
+_   A good rule of thumb is therefore things that might change, like implementation details, should be hidden, and things that do not change, like assumptions, are revealed through interfaces.
+_   Information hiding is closely associated with encapsulation. Since through encapsulation, the implementation of behaviours is hidden behind an interface, which is the only way to access specific methods, other classes rely on information in these method signatures, and not the underlying implementations.
+_   Information hiding can be accomplished through the use of access modifiers. Access modifiers change which classes are able to access attributes and behaviours. They also determine which attributes and behaviours a superclass will share with its subclasses. The four levels of access in Java are:
+    _Public: Attributes are accessible by any class in your system. This means that other classes can retrieve and modify the attribute or change. Methods can also be given a public level of access, so any class in the system can access the method. However, this access does not allow other classes to change the implementation of the behaviour for the method. A publicly accessible method simply allows other classes to call the method or invoke the behaviour and receive any output from it. However, implementation remains hidden through encapsulation.
+    _Protected: Attributes and methods are not accessible to every class in the system. Instead, they are only available to the encapsulated class itself, all subclasses, and classes within the same package. Packages are the means by which Java organizes related classes into a single namespace.
+    _Default: only allows access to attributes and methods to subclasses or classes that are part of the same package or encapsulation. This access modifier is also known as the no modifier access because it does not need to be explicitly declared in the code.
+    _Private: Attributes and methods are not accessible by any other class other than by the encapsulating class itself. This means these attributes cannot be accessed directly and these methods cannot be invoked by any other classes.
+
+1.3.4   Conceptual Integrity
+Is a concept related to creating consistent software. Conceptual integrity entails making decisions about the design and implementation of a software system, so even if multiple people work on it, it would seem cohesive and consistent as if only one mind was guiding the work. This is generally achieved through agreement to use certain design principles and conventions for creating the system.
+_   There are multiple ways to achieve conceptual integrity. These include:
+    _communication, 
+    _code reviews, 
+    _using certain design, 
+    _principles and programming constructs, 
+    _having a well-defined design or architecture underlying the software, 
+    _unifying concepts, 
+    _having a small core group that accepts each commit to the code base.
+_   Some good practices to foster communication include agile development practices like daily stand-up meetings and sprint retrospectives.
+_   Having well-defined design or architecture underlying software helps create conceptual integrity. While software design is typically associated with guiding the internal design of software running as a single process, software architecture describes how software running as multiple processes work together and how they relate to each other. This helps create consistency.
+
+1.3.5   Generalization Principles - Inheritance Issues
+Generalization and inheritance are some of the more difficult topics to master in object-oriented programming and modelling. Inheritance is a powerful design tool that can help create clean, reusable, and maintainable oftware systems. However, its misuse can lead to poor code. If design principles are used improperly, they may create more problems than they solve.
+_   In order to identify if inheritance is being misused, it is good practice to keep a couple of generalization principles in mind:
+    _Question to ask yourself about whether a subclass should exist: “Am I using inheritance to simply share attributes or behaviour without further adding anything special in my subclasses?” If the answer to this question is “yes,” then inheritance is being misused, as there is no point for the subclasses to exist. The superclass should already be enough.
+    _The Liskov substitution principle states that a subclass can replace a superclass, if and only if, the subclass does not change the functionality of the superclass. This means that if a subclass replaces a superclass, but replaces all the superclass behaviours with something totally different, then inheritance is being misused.
+_   In cases where inheritance is not appropriate, decomposition may be the solution.
+
+1.3.6   UML Sequence Diagram
+They are a type of UML diagram, commonly used as a planning tool before the development team starts programming. Sequence diagrams are used to show a design team how objects in a program interact with each other to complete tasks. In simple terms, a sequence diagram is like a map of conversations between different people, with the messages sent from person to person outlined.
+_   Each component of a sequence diagram are:
+    _Boxes are used to represent a role played by an object. The role is typically named after the class for the object.
+    _“Lifelines,” which are vertical dotted lines, are used in the diagram to indicate an object as time goes by.
+    _Solid line arrows are used to show messages that are sent from one object to another, or a sender to a receiver. Receivers are at the pointed end of an arrow. A short description of the message is usually  included above the arrow.
+    _Dotted line arrows are used to show a return of data and control back to initiating objects. A short description of the return of data or control is usually included above the arrow.
+    _Small rectangles along an object’s lifeline denote a method activation. You activate an object whenever an object sends, receives, or is waiting for a message.
+    _People, or actors, may also be included in sequence diagrams if they use or interact with objects. Actors are typically represented with stick figures.
+_Sequence diagrams are typically framed within a large box. Titles for the diagram are indicated in top, left corners. It is good practice to provide a meaningful title, as the diagram will be referenced for development. Another good practice is to draw objects from left to right in the sequence as they interact with each other.
+_A sequence diagram can contain other sequence diagrams within them. As you design software, your sequence diagrams may get much more complicated. Loops and alternative processes can also be demonstrated in a sequence diagram. An alternative process is a sequence of actions that will occur if a condition is true. An alternative sequence can be placed in a box and labelled “alt” for alternative in the top right corner.
+
+1.3.7   UML State Diagrams
 
 
 
@@ -30,39 +92,3 @@ _   Cohesion: focuses on complexity within a module, and represents the clarity 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1.2.1   Creating Models in Design:
-One approach to help make the design process easier is the object-
-oriented approach. This allows for the description of concepts in the problem and solution spaces as objects—objects are a notion that can be understood by both users and developers, because object-oriented thinking applies to many fields. This shared knowledge makes it possible for users and developers to discuss elements of complex problems.
-_   The goal during software design is to construct and refine “models” of all the objects of the software. Categories of objects involve:
-    _Entity objects, where initial focus during the design is placed in the problem space.
-    _Control objects that receive events and co-ordinate actions as the process moves to the solution space.
-    _Boundary objects that connect outside services to your system, as the process moves towards the solution space.
-_   Software models are often expressed in a visual notation, called Unified Modelling Language (UML).
-_   There's a continual need to critique and evaluate the models to
-ensure the design addresses the original problem and satisfies quality goals. Qualities are expected to be reusable, flexible and maintainable.
-_   The models also serve as design documentation for your software and can be easily mapped to skeletal source code.
-
-1.2.2   The goal of object-oriented design is:
-    _Make an abstract data type easier to write
-    _Structure a system around abstract data types called classes
-    _Introduce the ability for an abstract data type to extend another by introducing a concept called inheritance.
