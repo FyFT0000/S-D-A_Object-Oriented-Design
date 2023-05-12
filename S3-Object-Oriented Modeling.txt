@@ -112,10 +112,3 @@ _   Let us examine the different elements of state diagrams:
 
 
 
-
-
-
-
-
-
-
