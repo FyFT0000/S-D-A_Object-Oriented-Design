@@ -100,7 +100,16 @@ _   There are three different phases in model checking:
     _Modelling phase: During this phase, the model description is entered in the same programming languages as the system. Any desired properties are also described. This phase also performs sanity checks. Sanity checks are quick checks that should be easy to do, as they come from clear and simple logic. It is beneficial to test for these simple errors before using model checkers, so the focus can be on specifying the more complex properties to check. Sanity checks might include something as simple as turning the system on and off.
     _Running phase: The running phase is when the model checker is run to see how the model conforms to the desired properties described in the modelling phase.
     _Analysis phase: This phase is when all desired properties are checked to be satisfied, and if there are any violations. Violations are called counterexamples. The model checker should provide descriptions of violations in the system, so you can analyze how they occurred.
-    
+_The problem with model checking is the so called stage space explosion. If I've got one bit, i have two states.
+If I got I've got ten bits, I've got two to the tenth states. If I've got 1 million bits, I've 2 to the 1 million states. There's no way to explore to the 1 million. Current model checkers last time I knew anything about them, were about 2 to the 40th states, was about the most you could explore. That means if your problem can't be described in a small number of bits, you're in trouble because the model checker won't help you. So what model checking relies on is the ability for you to take your piece of code and extract from your piece of code just those parts of the problem that you need to model.
+_What model checking relies on is the ability for you to take your piece of code and extract from your piece of code just those parts of the problem that you need to model. So model checking relies on this thing that we call the small world assumption. That, if you have a system and things are going to go wrong, they're going to go wrong in small cases. And that if you look at the small cases, you can convince yourself to a reasonable degree of confidence that it's probably going to work in the big cases. That's the program extraction part, that's still a big problem, no one knows how to do that well.
+There's lots of tools that are good partial solutions but there's no general solutions to that.
+_It's only a small percentage of all the code that's written that can actually benefit from model checking because either it's not important enough who and you don't care who do the investment, or it's simply too complicated and model checking is not powerful enough yet. 
+
+
+
+
+
 
 
 
