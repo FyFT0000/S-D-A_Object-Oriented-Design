@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class ContactsActivity extends AppCompatActivity {
 
     private ContactList contact_list = new ContactList();
-    private ListView my_contacts;
+    private ListView my_contacts = null;
     private ArrayAdapter<Contact> adapter;
     private Context context;
     private ItemList item_list = new ItemList();

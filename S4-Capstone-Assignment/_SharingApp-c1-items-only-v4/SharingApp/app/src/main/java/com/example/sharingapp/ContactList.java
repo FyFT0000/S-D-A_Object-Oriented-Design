@@ -33,14 +33,11 @@ public class ContactList {
     }
 
     public ArrayList<String> getAllUsernames(){
-        if (contacts.size() > 0) {
-            ArrayList<String> allUsernames = new ArrayList<String>();
-            for (Contact i : contacts) {
-                allUsernames.add(i.getUsername());
-            }
-            return allUsernames;
+        ArrayList<String> allUsernames = new ArrayList<String>();
+        for (Contact i : contacts) {
+            allUsernames.add(i.getUsername());
         }
-        return null;
+        return allUsernames;
     }
 
     public void addContact(Contact contact) { contacts.add(contact); }
@@ -48,8 +45,27 @@ public class ContactList {
     public Contact getContact(int index) { return contacts.get(index);}
 
     public int getSize() {return contacts.size(); }
-    public int getIndex(Contact contact) {return contacts.indexOf(contact); }
-    public boolean hasContact(Contact contact) {return contacts.contains(contact); }
+    public int getIndex1(Contact contact) {return contacts.indexOf(contact); }
+    public int getIndex(Contact contact) {
+        int index = 0;
+        for (Contact i : contacts) {
+            if (i.getUsername().equals(contact.getUsername())) {
+                return index;
+            }
+            index += 1;
+        }
+        return -1;
+    }
+    public boolean hasContact1(Contact contact) {return contacts.contains(contact); }
+    public boolean hasContact(Contact contact) {
+        for (Contact i : contacts) {
+            if (i.getUsername().equals(contact.getUsername())) {
+                return true;
+            }
+            }
+        return false;
+        }
+
     public Contact getContactByUsername(String username) {
         for (Contact i : contacts) {
             if (i.getUsername().equals(username)) {
@@ -93,7 +109,7 @@ public class ContactList {
     }
 
     public boolean isUsernameAvailable(String username) {
-        return contacts.contains(getContactByUsername(username));
+        return !contacts.contains(getContactByUsername(username));
     }
 
 

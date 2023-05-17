@@ -42,6 +42,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         Bitmap thumbnail = item.getImage();
         String status = "Status: " + item.getStatus();
 
+
         // Check if an existing view is being reused, otherwise inflate the view.
         if (convertView == null) {
             convertView = inflater.from(context).inflate(R.layout.itemlist_item, parent, false);
@@ -66,8 +67,19 @@ public class ItemAdapter extends ArrayAdapter<Item> {
             status_tv.setText(status);
         }
 
-        // BorrowedItemsFragment/AvailableItemsFragment: itemlist_item shows title and description only
-        if (fragment instanceof BorrowedItemsFragment || fragment instanceof AvailableItemsFragment) {
+        // BorrowedItemsFragment: itemlist_item shows title, description and borrowed by who
+        if (fragment instanceof BorrowedItemsFragment) {
+            String b = item.getBorrower().getUsername();
+            if (b != null) {
+                String borrowed = "Borrow by: " + b;
+                status_tv.setText(borrowed);
+            } else {
+                status_tv.setVisibility(View.GONE);
+            }
+        }
+
+        // AvailableItemsFragment: itemlist_item shows title and description only
+        if (fragment instanceof AvailableItemsFragment) {
             status_tv.setVisibility(View.GONE);
         }
 

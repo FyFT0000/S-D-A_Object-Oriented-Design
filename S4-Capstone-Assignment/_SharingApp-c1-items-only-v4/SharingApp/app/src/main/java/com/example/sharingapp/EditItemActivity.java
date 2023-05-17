@@ -66,8 +66,7 @@ public class EditItemActivity extends AppCompatActivity {
         item_list.loadItems(context);
         contact_list.loadContacts(context);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item, contact_list.getAllUsernames());
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, contact_list.getAllUsernames());
         borrower_spinner.setAdapter(adapter);
 
         Intent intent = getIntent(); // Get intent from ItemsFragment
