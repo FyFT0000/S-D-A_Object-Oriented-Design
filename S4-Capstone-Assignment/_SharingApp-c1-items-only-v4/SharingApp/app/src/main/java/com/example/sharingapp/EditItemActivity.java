@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Editing a pre-existing item consists of deleting the old item and adding a new item with the old
@@ -128,6 +129,14 @@ public class EditItemActivity extends AppCompatActivity {
     }
 
     public void deleteItem(View view) {
+        if (item.getStatus().equals("Borrowed") ) {
+            CharSequence text = "Item is Borrowed, can not be deleted!";
+            int duration = Toast.LENGTH_SHORT;
+            Toast.makeText(context, text, duration).show();
+            //borrower_tv.setError("Item is Borrowed, can not be deleted!");
+            return;
+        }
+
         item_list.deleteItem(item);
         item_list.saveItems(context);
 
